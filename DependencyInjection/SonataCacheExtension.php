@@ -40,7 +40,7 @@ class SonataCacheExtension extends Extension
         $config = $processor->processConfiguration($configuration, $configs);
 
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $isOrmLoaded = class_exists('Doctrine\\ORM\\Version');
+        $isOrmLoaded = false;
         if ($isOrmLoaded) {
             $loader->load('orm.xml');
         }
